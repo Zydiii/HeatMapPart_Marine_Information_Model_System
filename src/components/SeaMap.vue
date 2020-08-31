@@ -1,5 +1,5 @@
 <template>
-  <div id="map" class="map"></div>
+  <div id="map" class="map"><div id="css_animation"></div></div>
 </template>
 <script>
 import 'ol/ol.css'
@@ -52,4 +52,20 @@ export default {
     width: 1900px;
     height: 1080px;
   }
+  /** 地图上的故障处理器显示效果*/
+#css_animation{
+    height:50px;
+    width:50px;
+    border-radius: 25px;
+    background: rgba(255, 0, 0, 0.9);
+    transform: scale(0);
+    animation: myfirst 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes myfirst{
+    to{
+        transform: scale(2);
+        background: rgba(0, 0, 0, 0);
+    }
+}
 </style>
