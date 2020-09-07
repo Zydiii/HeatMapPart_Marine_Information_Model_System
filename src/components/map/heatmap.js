@@ -54,6 +54,7 @@ export function showHeatmap(map, heatmapLayer, flag) {
         lonLat = new Point(coord);
         pointFeature = new Feature({
           geometry: lonLat,
+          name: 'heatmap',
           weight: eachData.weight // e.g. temperature
         });
         data.addFeature(pointFeature);
