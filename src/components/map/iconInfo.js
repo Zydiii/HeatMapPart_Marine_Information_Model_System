@@ -25,7 +25,7 @@ export function showInfo(map, iconInfoLayer) {
         iconInfoLayer.setPosition(undefined);
         map.forEachFeatureAtPixel(pixel, function (feature) {
             if (feature.get('name') == 'icon') {
-                content.style.fontSize = '14px';
+                content.style.fontSize = '16px';
 
                 //coodinate存放了点击时的坐标信息
                 var coodinate = e.coordinate;
@@ -34,14 +34,14 @@ export function showInfo(map, iconInfoLayer) {
 
                 coodinate = olProj.toLonLat(coodinate);
                 //设置弹出框内容，可以HTML自定义
-                content.innerHTML = "<p> W：" + coodinate[0].toFixed(6) + "°" + "<br>" + "E: " + coodinate[1].toFixed(6) + "°" + "</p>";
+                content.innerHTML = "<p>W: " + coodinate[0].toFixed(6) + "°" + "<br>" + "E: " + coodinate[1].toFixed(6) + "°" + "</p>";
                 //显示overlay
                 // map.addOverlay(iconInfoLayer);
                 //console.log(feature)
             }
             else if(feature.get('name') == 'heatmap')
             {
-                content.style.fontSize = '10px';
+                content.style.fontSize = '0.5px';
                 //coodinate存放了点击时的坐标信息
                 coodinate = e.coordinate;
                 //设置overlay的显示位置
@@ -49,7 +49,7 @@ export function showInfo(map, iconInfoLayer) {
 
                 coodinate = olProj.toLonLat(coodinate);
                 //设置弹出框内容，可以HTML自定义
-                content.innerHTML = "<p> W：" + coodinate[0].toFixed(6) + "°" + "<br>" + "E: " + coodinate[1].toFixed(6) + "°" +  "<br>" + feature.get("weight")*20 + "℃" + "</p>";
+                content.innerHTML = "<p>W: " + coodinate[0].toFixed(6) + "°" + "<br>" + "E: " + coodinate[1].toFixed(6) + "°" +  "<br>" + feature.get("weight")*20 + "℃" + "</p>";
             }
             else {
                 iconInfoLayer.setPosition(undefined);

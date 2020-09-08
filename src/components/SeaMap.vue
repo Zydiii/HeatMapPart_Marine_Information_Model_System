@@ -163,7 +163,7 @@ export default {
 }
 #popup {
   width: 150px;
-  height: 45px;
+  height: 55px;
   border: 2px solid #fff;
   border-radius: 7px; /*圆角弧度为7px*/
   position: relative;
